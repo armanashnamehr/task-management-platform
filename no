@@ -1,0 +1,124 @@
+[1mdiff --git a/src/app/page.tsx b/src/app/page.tsx[m
+[1mindex c887311..5dfea8a 100644[m
+[1m--- a/src/app/page.tsx[m
+[1m+++ b/src/app/page.tsx[m
+[36m@@ -1,69 +1,59 @@[m
+[31m-import Image from "next/image";[m
+[31m-[m
+ export default function Home() {[m
+   return ([m
+[31m-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">[m
+[31m-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">[m
+[31m-        <Image[m
+[31m-          className="dark:invert h-5 w-[100px]"[m
+[31m-          src="/next.svg"[m
+[31m-          alt="Next.js logo"[m
+[31m-          width={100}[m
+[31m-          height={20}[m
+[31m-          priority[m
+[31m-        />[m
+[31m-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">[m
+[31m-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">[m
+[31m-            To get started, edit the{" "}[m
+[31m-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">[m
+[31m-              page.tsx[m
+[31m-            </code>{" "}[m
+[31m-            file.[m
+[32m+[m[32m    <main className="min-h-screen bg-slate-950 text-white">[m
+[32m+[m[32m      <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-8">[m
+[32m+[m[32m        <header className="flex items-center justify-between">[m
+[32m+[m[32m          <div className="text-xl font-semibold tracking-tight">TaskFlow</div>[m
+[32m+[m
+[32m+[m[32m          <nav className="flex items-center gap-6 text-sm text-slate-300">[m
+[32m+[m[32m            <a href="/login" className="transition hover:text-white">[m
+[32m+[m[32m              Sign in[m
+[32m+[m[32m            </a>[m
+[32m+[m
+[32m+[m[32m            <a[m
+[32m+[m[32m              href="/register"[m
+[32m+[m[32m              className="rounded-lg bg-white px-4 py-2 font-medium text-slate-950 transition hover:bg-slate-200"[m
+[32m+[m[32m            >[m
+[32m+[m[32m              Get started[m
+[32m+[m[32m            </a>[m
+[32m+[m[32m          </nav>[m
+[32m+[m[32m        </header>[m
+[32m+[m
+[32m+[m[32m        <section className="flex flex-1 flex-col items-center justify-center text-center">[m
+[32m+[m[32m          <p className="mb-5 rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-300">[m
+[32m+[m[32m            A better way to manage your work[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <h1 className="max-w-3xl text-5xl font-bold tracking-tight sm:text-6xl">[m
+[32m+[m[32m            Bring your projects and tasks together.[m
+           </h1>[m
+[31m-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">[m
+[31m-            Looking for a starting point or more instructions? Head over to{" "}[m
+[32m+[m
+[32m+[m[32m          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">[m
+[32m+[m[32m            Organize projects, collaborate with your team, and keep your work[m
+[32m+[m[32m            moving forward in one place.[m
+[32m+[m[32m          </p>[m
+[32m+[m
+[32m+[m[32m          <div className="mt-10 flex gap-4">[m
+             <a[m
+[31m-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"[m
+[31m-              className="font-medium text-zinc-950 dark:text-zinc-50"[m
+[32m+[m[32m              href="/register"[m
+[32m+[m[32m              className="rounded-lg bg-blue-600 px-6 py-3 font-medium transition hover:bg-blue-500"[m
+             >[m
+[31m-              Templates[m
+[31m-            </a>{" "}[m
+[31m-            or the{" "}[m
+[32m+[m[32m              Create your workspace[m
+[32m+[m[32m            </a>[m
+[32m+[m
+             <a[m
+[31m-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"[m
+[31m-              className="font-medium text-zinc-950 dark:text-zinc-50"[m
+[32m+[m[32m              href="/login"[m
+[32m+[m[32m              className="rounded-lg border border-slate-700 px-6 py-3 font-medium transition hover:bg-slate-800"[m
+             >[m
+[31m-              Learning[m
+[31m-            </a>{" "}[m
+[31m-            center.[m
+[31m-          </p>[m
+[31m-        </div>[m
+[31m-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">[m
+[31m-          <a[m
+[31m-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"[m
+[31m-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"[m
+[31m-            target="_blank"[m
+[31m-            rel="noopener noreferrer"[m
+[31m-          >[m
+[31m-            <Image[m
+[31m-              className="dark:invert h-[14px] w-4"[m
+[31m-              src="/vercel.svg"[m
+[31m-              alt="Vercel logomark"[m
+[31m-              width={16}[m
+[31m-              height={14}[m
+[31m-            />[m
+[31m-            Deploy Now[m
+[31m-          </a>[m
+[31m-          <a[m
+[31m-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"[m
+[31m-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"[m
+[31m-            target="_blank"[m
+[31m-            rel="noopener noreferrer"[m
+[31m-          >[m
+[31m-            Documentation[m
+[31m-          </a>[m
+[31m-        </div>[m
+[31m-      </main>[m
+[31m-    </div>[m
+[32m+[m[32m              Sign in[m
+[32m+[m[32m            </a>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        <footer className="border-t border-slate-800 py-6 text-center text-sm text-slate-500">[m
+[32m+[m[32m          © {new Date().getFullYear()} TaskFlow[m
+[32m+[m[32m        </footer>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    </main>[m
+   );[m
+ }[m

@@ -1,21 +1,25 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-8">
+    <main className="flex flex-1 flex-col bg-slate-950 px-6 py-8 text-white">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col">
         <header className="flex items-center justify-between">
-          <div className="text-xl font-semibold tracking-tight">TaskFlow</div>
+          <Link href="/" className="text-xl font-semibold tracking-tight">
+            TaskFlow
+          </Link>
 
           <nav className="flex items-center gap-6 text-sm text-slate-300">
-            <a href="/login" className="transition hover:text-white">
+            <Link href="/login" className="transition hover:text-white">
               Sign in
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/register"
               className="rounded-lg bg-white px-4 py-2 font-medium text-slate-950 transition hover:bg-slate-200"
             >
               Get started
-            </a>
+            </Link>
           </nav>
         </header>
 
@@ -33,20 +37,20 @@ export default function Home() {
             moving forward in one place.
           </p>
 
-          <div className="mt-10 flex gap-4">
-            <a
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link
               href="/register"
               className="rounded-lg bg-blue-600 px-6 py-3 font-medium transition hover:bg-blue-500"
             >
               Create your workspace
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/login"
               className="rounded-lg border border-slate-700 px-6 py-3 font-medium transition hover:bg-slate-800"
             >
               Sign in
-            </a>
+            </Link>
           </div>
         </section>
 
