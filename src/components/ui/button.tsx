@@ -1,28 +1,14 @@
-import type { ButtonHTMLAttributes, HTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "danger";
 type ButtonSize = "sm" | "md" | "lg";
-type ButtonVariant2 = "primary" | "secondary" | "ghost" | "danger";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
 };
 //**In this type we, all of a button standard attributes included and also two other attributes such as: variant and size */
-type ButtonProps2 = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-};
-type ButtonAttributes3 = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-};
-const variantStyles2: Record<ButtonVariant, string> = {
-  primary: "bg-blue text-white hover:bg-blue-500",
-  secondary: "text-white",
-  ghost: "",
-  danger: "",
-};
+
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
     "bg-blue-600 text-white hover:bg-blue-500 focus-visible:ring-blue-500",

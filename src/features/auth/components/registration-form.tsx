@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { ChangeEvent, ChangeEventHandler, FormEvent } from "react";
+import type { ChangeEvent, SubmitEvent } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -13,22 +13,10 @@ type RegisterFormValues = {
   password: string;
   confirmPassword: string;
 };
-type RegisterFormValues2 = {
-  name: string;
-  email: string;
-  password?: string;
-  confirmPassword: string;
-};
-type RegistrationFormError2 = Partial<Record<keyof RegisterFormValues, string>>;
+
 type RegisterFormErrors = Partial<Record<keyof RegisterFormValues, string>>;
 
 const initialValues: RegisterFormValues = {
-  name: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-};
-const initialValues2: RegisterFormValues2 = {
   name: "",
   email: "",
   password: "",
@@ -88,7 +76,7 @@ export function RegisterForm() {
     setStatusMessage("");
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const validationErrors = validateForm(values);

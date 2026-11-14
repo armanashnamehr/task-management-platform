@@ -10,17 +10,7 @@ This allows the parent page to decide what action belongs in the heading.
 For example, the Workspaces page might provide a Create Workspace button, while the Dashboard might not provide any action at all.  */
   actions?: ReactNode;
 };
-type PageHeadingProps2 = {
-  title: string;
-  description: string;
-  actions?: ReactNode;
-};
 
-export function PageHeading2({
-  title,
-  description,
-  actions,
-}: PageHeadingProps2) {}
 export function PageHeading({ title, description, actions }: PageHeadingProps) {
   return (
     <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
