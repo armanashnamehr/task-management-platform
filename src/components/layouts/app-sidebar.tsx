@@ -1,22 +1,15 @@
-import Link from "next/link";
+import { AppNavLink } from "./app-nav-link";
 
 export default function AppSidebar() {
   return (
     <aside className="w-64 shrink-0 border-r border-slate-800 p-6">
       <nav className="space-y-4 text-sm">
-        <Link
-          href="/dashboard"
-          className="block text-white transition hover:text-blue-400"
-        >
-          Dashboard
-        </Link>
-        <Link
-          href="/workspace"
-          className="block text-late-400 transiton hover:text-blue-400"
-        >
-          Workspace
-        </Link>
+        {/** a client-side component is isolated here. */}
+        <AppNavLink href="/dashboard">Dashboard</AppNavLink>
+        <AppNavLink href="/workspace">Workspace</AppNavLink>
       </nav>
     </aside>
   );
 }
+// This is a Server Side Component.
+// We can use a client-Side component here.
